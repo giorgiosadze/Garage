@@ -1,3 +1,3 @@
 # Garage
 
-Collection of scripts, other useful things.
+ Collection of scripts, other useful things.
