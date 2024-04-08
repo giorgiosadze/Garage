@@ -40,3 +40,20 @@ func Clamp[T comparable](x, min, max T) T {
     }
     return x
 }
+
+// Max returns the larger of a and b for any orderable type.
+func Max[T comparable](a, b T) T {
+    if a > b {
+        return a
+    }
+    return b
+}
+
+// Min returns the smaller of a and b for any orderable type.
+func Min[T comparable](a, b T) T {
+    if a < b {
+        return a
+    }
+    return b
+}
+
