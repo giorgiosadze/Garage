@@ -60,7 +60,7 @@ func Min[T comparable](a, b T) T {
 // MinElement returns the smallest element in a slice. If the slice is empty, it returns the zero value of the type.
 func MinElement[T comparable](data []T) (min T, found bool) {
     if len(data) == 0 {
-        return min, false // Not found, returning zero value.
+        return min, false
     }
 
     min = data[0]
@@ -69,6 +69,20 @@ func MinElement[T comparable](data []T) (min T, found bool) {
             min = value
         }
     }
-    return min, true // Found, returning the minimum.
+    return min, true
 }
 
+// MaxElement returns the largest element in a slice. If the slice is empty, it returns the zero value of the type.
+func MaxElement[T comparable](data []T) (min T, found bool) {
+    if len(data) == 0 {
+        return min, false
+    }
+
+    max = data[0]
+    for _, value := range data[1:] {
+        if value > max {
+            min = value
+        }
+    }
+    return max, true
+}
