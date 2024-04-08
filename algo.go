@@ -29,3 +29,14 @@ func NoneOf[T any](data []T, f func(T) bool) bool {
     }
     return true
 }
+
+// Clamp constrains a value x to the range [min, max].
+func Clamp[T comparable](x, min, max T) T {
+    if x < min {
+        return min
+    }
+    if x > max {
+        return max
+    }
+    return x
+}
