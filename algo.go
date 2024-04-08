@@ -57,3 +57,18 @@ func Min[T comparable](a, b T) T {
     return b
 }
 
+// MinElement returns the smallest element in a slice. If the slice is empty, it returns the zero value of the type.
+func MinElement[T comparable](data []T) (min T, found bool) {
+    if len(data) == 0 {
+        return min, false // Not found, returning zero value.
+    }
+
+    min = data[0]
+    for _, value := range data[1:] {
+        if value < min {
+            min = value
+        }
+    }
+    return min, true // Found, returning the minimum.
+}
+
