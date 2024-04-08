@@ -86,3 +86,33 @@ func MaxElement[T comparable](data []T) (min T, found bool) {
     }
     return max, true
 }
+
+// Map applies a function to each item in a slice and returns a new slice with the results.
+func Map[T any, U any](s []T, f func(T) U) []U {
+    result := make([]U, len(s))
+    for i, v := range s {
+        result[i] = f(v)
+    }
+    return result
+}
+
+// Filter returns a new slice holding only the items in s that match the predicate f.
+func Filter[T any](s []T, f func(T) bool) []T {
+    var result []T
+    for _, v := range s {
+        if f(v) {
+            result = append(result, v)
+        }
+    }
+    return result
+}
+
+// Reduce applies a function of two arguments cumulatively to the items of a slice,
+// from left to right, so as to reduce the slice to a single value.
+func Reduce[T any, U any](s []T, initializer U, f func(U, T) U) U {
+    result := initializer
+    for _, v := range s {
+        result = f(result, v)
+    }
+    return result
+}
