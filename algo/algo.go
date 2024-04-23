@@ -103,3 +103,10 @@ func Reduce[T any, U any](s []T, initializer U, f func(U, T) U) U {
 	return result
 }
 
+func Reverse(s string) string {
+	ans := ""
+	for _, e := range s {
+		ans = string(e) + ans
+	}
+	return ans
+}
