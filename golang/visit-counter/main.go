@@ -12,6 +12,7 @@ import (
 var db *sql.DB
 
 func initDB() {
+
 	var err error
 	db, err = sql.Open("sqlite3", "./visits.db")
 	if err != nil {
